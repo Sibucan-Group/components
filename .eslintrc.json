@@ -21,7 +21,7 @@
   "rules": {
     "tailwindcss/no-custom-classname": [
       1, {
-      "whitelist": ["dui-.*"]
+      "cssFiles": ["node_modules/daisyui/dist/*.css"]
     }]
   }
 }
