@@ -12,7 +12,7 @@ const classes = {
   secondary: 'btn-secondary',
   contained: null,
   outlined: 'btn-outline',
-  gradient: 'bg-gradient-to-r from-transparent to-black/50 border-0',
+  gradient: 'bg-gradient-to-r from-transparent to-black/40 border-0',
   large: 'btn-lg',
   normal: null,
   small: 'btn-sm',

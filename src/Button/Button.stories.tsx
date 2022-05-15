@@ -38,6 +38,7 @@ export const Large = Template.bind({})
 Large.args = {
   size: 'large',
   children: 'Large',
+  className: 'btn-wide',
 }
 
 export const Small = Template.bind({})
