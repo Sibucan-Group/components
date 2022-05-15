@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cnbuilder": "^3.1.0",
     "daisyui": "^2.14.3",
     "react": "17",
     "react-dom": "17",
