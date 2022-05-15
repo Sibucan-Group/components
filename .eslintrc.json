@@ -22,7 +22,9 @@
   "rules": {
     "tailwindcss/no-custom-classname": [
       1, {
-      "cssFiles": ["node_modules/daisyui/dist/*.css"]
-    }]
+        "callees": ["cnb"],
+        "cssFiles": ["node_modules/daisyui/dist/*.css"]
+      }
+    ]
   }
 }
