@@ -46,6 +46,13 @@ Small.args = {
   children: 'Small',
 }
 
+export const Loading = Template.bind({})
+Loading.args = {
+  variant: 'contained',
+  loading: true,
+  children: 'Loading',
+}
+
 export const Disabled = Template.bind({})
 Disabled.args = {
   variant: 'contained',
