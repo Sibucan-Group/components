@@ -1,0 +1,19 @@
+.btn {
+    @apply text-base;
+}
+
+.btn-xs {
+    @apply text-xs;
+}
+
+.btn-sm {
+    @apply text-sm;
+}
+
+.btn-md {
+    @apply text-base
+}
+
+.btn-lg {
+    @apply text-lg;
+}
