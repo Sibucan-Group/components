@@ -31,7 +31,7 @@ export const Button = ({
 }: ButtonProps) => (
   <button
     className={cnb(
-      'btn rounded-full',
+      'btn rounded-full normal-case',
       classes[variant],
       classes[color],
       classes[size],
