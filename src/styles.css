@@ -1,5 +1,5 @@
 .btn {
-    @apply text-base;
+    @apply text-base shadow-lg;
 }
 
 .btn-xs {
