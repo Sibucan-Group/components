@@ -47,6 +47,12 @@ Small.args = {
   children: 'Small',
 }
 
+export const Tiny = Template.bind({})
+Tiny.args = {
+  size: 'tiny',
+  children: 'Tiny',
+}
+
 export const Loading = Template.bind({})
 Loading.args = {
   variant: 'contained',
