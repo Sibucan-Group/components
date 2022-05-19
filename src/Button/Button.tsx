@@ -1,7 +1,7 @@
 import { cnb } from 'cnbuilder'
 
 export type ButtonProps = JSX.IntrinsicElements['button'] & {
-  variant?: 'outlined' | 'contained' | 'gradient'
+  variant?: 'outlined' | 'contained' | 'gradient' | 'ghost' | 'link'
   color?: 'primary' | 'secondary'
   size?: 'large' | 'normal' | 'small' | 'tiny'
   loading?: boolean
@@ -13,6 +13,8 @@ const classes = {
   contained: null,
   outlined: 'btn-outline',
   gradient: 'bg-gradient-to-r from-transparent to-black/40 border-0',
+  ghost: 'btn-ghost',
+  link: 'btn-link',
   large: 'btn-lg',
   normal: null,
   small: 'btn-sm',
