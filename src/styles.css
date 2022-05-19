@@ -1,5 +1,5 @@
 .btn {
-    @apply text-base shadow-lg;
+    @apply text-base hover:shadow-lg;
 }
 
 .btn-xs {
@@ -18,6 +18,6 @@
     @apply text-lg;
 }
 
-.btn-ghost, .btn-link {
-    @apply shadow-none
+.btn-link {
+    @apply hover:shadow-none
 }
