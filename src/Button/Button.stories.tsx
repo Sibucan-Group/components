@@ -34,6 +34,18 @@ Gradient.args = {
   children: 'Gradient',
 }
 
+export const Ghost = Template.bind({})
+Ghost.args = {
+  variant: 'ghost',
+  children: 'Ghost',
+}
+
+export const Link = Template.bind({})
+Link.args = {
+  variant: 'link',
+  children: 'Link',
+}
+
 export const Large = Template.bind({})
 Large.args = {
   size: 'large',
