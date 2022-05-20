@@ -1,0 +1,23 @@
+.btn {
+    @apply text-base hover:shadow-lg;
+}
+
+.btn-xs {
+    @apply text-xs;
+}
+
+.btn-sm {
+    @apply text-sm;
+}
+
+.btn-md {
+    @apply text-base
+}
+
+.btn-lg {
+    @apply text-lg;
+}
+
+.btn-link {
+    @apply hover:shadow-none
+}
