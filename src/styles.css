@@ -1,23 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .btn {
-    @apply text-base hover:shadow-lg;
+  @apply text-base hover:shadow-lg;
 }
 
 .btn-xs {
-    @apply text-xs;
+  @apply text-xs;
 }
 
 .btn-sm {
-    @apply text-sm;
+  @apply text-sm;
 }
 
 .btn-md {
-    @apply text-base
+  @apply text-base;
 }
 
 .btn-lg {
-    @apply text-lg;
+  @apply text-lg;
 }
 
 .btn-link {
-    @apply hover:shadow-none
+  @apply hover:shadow-none;
 }

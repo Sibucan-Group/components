@@ -16,5 +16,6 @@ const Template: Story<SearchProductsFilterProps> = args => (
 
 export const Default = Template.bind({})
 Default.args = {
+  title: 'Search Products',
   tab: 'vendor',
 }
