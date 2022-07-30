@@ -1,4 +1,4 @@
-import { SOption } from '../Select'
+import { SOption } from '../../atoms/Select'
 
 export interface Category extends SOption {
   department?: number // ForeignKey (number | Department)

@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react'
 import { cnb } from 'cnbuilder'
 
-import { Button } from '../Button'
-import { Select, SOption } from '../Select'
+import { Button } from '../../atoms/Button'
+import { Select, SOption } from '../../atoms/Select'
 
 interface ProductsSearchFilterOptions<T, S, U> {
   title: string

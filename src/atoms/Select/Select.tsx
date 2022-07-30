@@ -33,7 +33,7 @@ export const Select = <T extends SOption>({
       <div className={cnb('relative', classNames?.root)}>
         <Listbox.Button
           className={cnb(
-            'border-gray-73 relative w-full cursor-default rounded-2xl border',
+            'border-gray-73 relative cursor-default rounded-2xl border',
             'bg-white py-2.5 pl-3 text-left',
             'focus:outline-none focus-visible:ring-1 focus-visible:ring-primary',
             'focus-visible:border-primary focus-visible:ring-offset-primary',
@@ -58,7 +58,7 @@ export const Select = <T extends SOption>({
         >
           <Listbox.Options
             className={cnb(
-              'absolute z-50 mt-1 max-h-60 w-full overflow-auto ring-primary',
+              'absolute z-50 mt-1 max-h-60 overflow-auto ring-primary',
               'rounded-xl bg-white py-1 shadow-lg ring-1 ring-opacity-5 focus:outline-none',
               classNames?.panel
             )}
