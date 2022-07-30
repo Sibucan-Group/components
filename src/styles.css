@@ -4,6 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --sb-bg-opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0.4vw;
+  height: 0.4vw;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(18 187 209 / var(--sb-bg-opacity));
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(12, 174, 195);
+}
+
+@supports (scrollbar-color: white black) {
+  * {
+    scrollbar-color: rgb(18 187 209 / var(--sb-bg-opacity)) white;
+  }
+}
+
 .btn {
   @apply text-base hover:shadow-lg;
 }
