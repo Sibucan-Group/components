@@ -1,6 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ComponentMeta, Story } from '@storybook/react'
 
-import { Select } from './Select'
+import { Select, SelectProps } from './Select'
 
 interface Category {
   en_name: string
@@ -19,11 +19,11 @@ const CATEGORIES: Category[] = [
 ]
 
 export default {
-  title: 'Select',
+  title: 'Select2',
   component: Select,
 } as ComponentMeta<typeof Select>
 
-const Template: ComponentStory<typeof Select> = args => <Select {...args} />
+const Template: Story<SelectProps<Category>> = args => <Select {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
@@ -31,6 +31,8 @@ Default.args = {
     button: 'w-[316px] bg-white shadow p-3',
     panel: 'w-[316px]',
   },
-  options: CATEGORIES,
-  selected: CATEGORIES[0],
+  items: CATEGORIES,
+  value: CATEGORIES[0],
+  keyExtractor: c => c.en_name,
+  renderItem: c => c.en_name,
 }
