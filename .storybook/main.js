@@ -12,6 +12,7 @@ module.exports = {
   },
   staticDirs: ['../public'],
   webpackFinal: config => {
+    // styles
     config.module.rules.push({
       test: /\.css$/,
       use: [

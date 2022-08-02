@@ -1,23 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sb-bg-opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0.4vw;
+  height: 0.4vw;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(18 187 209 / var(--sb-bg-opacity));
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(12, 174, 195);
+}
+
+@supports (scrollbar-color: white black) {
+  * {
+    scrollbar-color: rgb(18 187 209 / var(--sb-bg-opacity)) white;
+  }
+}
+
 .btn {
-    @apply text-base hover:shadow-lg;
+  @apply text-base hover:shadow-lg;
 }
 
 .btn-xs {
-    @apply text-xs;
+  @apply text-xs;
 }
 
 .btn-sm {
-    @apply text-sm;
+  @apply text-sm;
 }
 
 .btn-md {
-    @apply text-base
+  @apply text-base;
 }
 
 .btn-lg {
-    @apply text-lg;
+  @apply text-lg;
 }
 
 .btn-link {
-    @apply hover:shadow-none
+  @apply hover:shadow-none;
 }
