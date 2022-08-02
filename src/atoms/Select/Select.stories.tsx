@@ -19,3 +19,22 @@ Default.args = {
   items: CATEGORIES,
   value: CATEGORIES[0],
 }
+
+export const WithLabel = Template.bind({})
+WithLabel.args = {
+  classNames: {
+    root: 'w-80',
+  },
+  items: CATEGORIES,
+  value: CATEGORIES[0],
+  label: 'Select an example',
+}
+
+export const WithPlaceholder = Template.bind({})
+WithPlaceholder.args = {
+  classNames: {
+    root: 'w-80',
+  },
+  items: CATEGORIES,
+  placeholder: 'Select an item',
+}
