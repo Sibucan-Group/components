@@ -2,7 +2,7 @@ import { ComponentMeta, Story } from '@storybook/react'
 
 import { Select, SelectProps } from './Select'
 
-const CATEGORIES = ['Example 1', 'Example 2']
+const categories = ['Example 1', 'Example 2']
 
 export default {
   title: 'Select',
@@ -16,8 +16,8 @@ Default.args = {
   classNames: {
     root: 'w-80',
   },
-  items: CATEGORIES,
-  value: CATEGORIES[0],
+  items: categories,
+  value: categories[0],
 }
 
 export const WithLabel = Template.bind({})
@@ -25,8 +25,8 @@ WithLabel.args = {
   classNames: {
     root: 'w-80',
   },
-  items: CATEGORIES,
-  value: CATEGORIES[0],
+  items: categories,
+  value: categories[0],
   label: 'Select an example',
 }
 
@@ -35,6 +35,6 @@ WithPlaceholder.args = {
   classNames: {
     root: 'w-80',
   },
-  items: CATEGORIES,
+  items: categories,
   placeholder: 'Select an item',
 }
