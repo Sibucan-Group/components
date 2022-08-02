@@ -73,6 +73,9 @@ export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
         label: locale.labels.category,
         items: categories,
         value: categories[0],
+        classNames: {
+          button: 'shadow',
+        },
         keyExtractor: c => c.en_name,
         renderItem: c => c[`${lang}_name`],
       }}
@@ -80,6 +83,9 @@ export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
         label: locale.labels.subCategory,
         items: subCategories,
         value: subCategories[0],
+        classNames: {
+          button: 'shadow',
+        },
         keyExtractor: sc => sc.en_name,
         renderItem: sc => sc[`${lang}_name`],
       }}
@@ -87,6 +93,9 @@ export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
         label: locale.labels.brand,
         items: brands,
         value: brands[0],
+        classNames: {
+          button: 'shadow',
+        },
         keyExtractor: b => b.en_name,
         renderItem: b => b[`${lang}_name`],
       }}

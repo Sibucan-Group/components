@@ -78,7 +78,7 @@ export const Select = <T extends SelectOption>({
             <Listbox.Options
               className={cnb(
                 'absolute w-full z-50 mt-1 max-h-60 overflow-auto ring-primary',
-                'rounded-xl bg-white py-1 shadow-lg ring-1 ring-opacity-5 focus:outline-none',
+                'rounded-xl bg-white p-2 shadow-lg ring-1 ring-opacity-5 focus:outline-none',
                 classNames?.panel
               )}
             >
@@ -88,7 +88,7 @@ export const Select = <T extends SelectOption>({
                   value={i}
                   className={({ active }) =>
                     cnb(
-                      'relative cursor-pointer select-none py-2 pl-10 pr-4',
+                      'relative cursor-default select-none rounded-xl py-2 pl-10 pr-4 transition-all',
                       active ? 'bg-gray-200 text-primary' : 'text-gray-600'
                     )
                   }

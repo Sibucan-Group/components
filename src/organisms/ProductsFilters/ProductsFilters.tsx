@@ -37,7 +37,7 @@ export type ProductsFiltersProps<C, SC, B> = {
   subCategoriesSelectProps: SelectProps<SC>
   brandsSelectProps: SelectProps<B>
   onTabChange?: Dispatch<SetStateAction<ProductsFilterTab>>
-  onSearchChange?: () => void
+  onSearch?: () => void
   onMinChange?: Dispatch<SetStateAction<string>>
   onMaxChange?: Dispatch<SetStateAction<string>>
 }
@@ -55,13 +55,15 @@ export const ProductsFilters = <
   subCategoriesSelectProps,
   brandsSelectProps,
   onTabChange,
-  onSearchChange,
+  onSearch,
   onMinChange,
   onMaxChange,
 }: ProductsFiltersProps<C, SC, B>) => {
   return (
     <div className='p-8 w-96 rounded-2xl shadow-lg bg-base-100'>
-      <div className='mb-2 text-xl font-semibold text-center'>{title}</div>
+      <div className='mb-2 text-xl font-semibold text-center text-neutral'>
+        {title}
+      </div>
       <div className='flex items-center px-2 text-white rounded-full transition'>
         <button
           className={cnb(
@@ -96,7 +98,7 @@ export const ProductsFilters = <
           type='submit'
           variant='contained'
           className='!text-lg font-bold btn-wide'
-          onClick={onSearchChange}
+          onClick={onSearch}
         >
           {buttonText}
         </Button>

@@ -2,7 +2,7 @@
 
 # IDEs config
 .vscode
-
+.idea
 # dependencies
 /node_modules
 /.pnp
