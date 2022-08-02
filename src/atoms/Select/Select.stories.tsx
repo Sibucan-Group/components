@@ -1,36 +1,40 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ComponentMeta, Story } from '@storybook/react'
 
-import { Select } from './Select'
+import { Select, SelectProps } from './Select'
 
-interface Category {
-  en_name: string
-  es_name: string
-}
-
-const CATEGORIES: Category[] = [
-  {
-    en_name: 'Example 1',
-    es_name: 'Ejemplo 2',
-  },
-  {
-    en_name: 'Example 2',
-    es_name: 'Ejemplo 2',
-  },
-]
+const CATEGORIES = ['Example 1', 'Example 2']
 
 export default {
   title: 'Select',
   component: Select,
 } as ComponentMeta<typeof Select>
 
-const Template: ComponentStory<typeof Select> = args => <Select {...args} />
+const Template: Story<SelectProps<string>> = args => <Select {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
   classNames: {
-    button: 'w-[316px] bg-white shadow p-3',
-    panel: 'w-[316px]',
+    root: 'w-80',
   },
-  options: CATEGORIES,
-  selected: CATEGORIES[0],
+  items: CATEGORIES,
+  value: CATEGORIES[0],
+}
+
+export const WithLabel = Template.bind({})
+WithLabel.args = {
+  classNames: {
+    root: 'w-80',
+  },
+  items: CATEGORIES,
+  value: CATEGORIES[0],
+  label: 'Select an example',
+}
+
+export const WithPlaceholder = Template.bind({})
+WithPlaceholder.args = {
+  classNames: {
+    root: 'w-80',
+  },
+  items: CATEGORIES,
+  placeholder: 'Select an item',
 }

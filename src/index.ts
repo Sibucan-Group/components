@@ -1,3 +1,2 @@
-export * from './atoms/Button'
-export * from './atoms/Select'
+export * from './atoms'
 export * from './organisms/ProductsSearchFilter'
