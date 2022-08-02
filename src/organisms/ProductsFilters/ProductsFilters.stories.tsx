@@ -1,39 +1,95 @@
-import { ComponentMeta, Story } from '@storybook/react'
+import { ComponentMeta } from '@storybook/react'
 
-import { ProductsFilters, ProductsFiltersProps } from './ProductsFilters'
+import { ProductsFilters } from './ProductsFilters'
 
-const categories = ['All', 'Category 1', 'Category 2', 'Category 3']
-const subCategories = ['All', 'SubCategory 1', 'SubCategory 2', 'SubCategory 3']
-const brands = ['All', 'Brand 1', 'Brand 2', 'Brand 3']
+const categories = [
+  { en_name: 'All categories', es_name: 'Todas las categorías' },
+  { en_name: 'Category 1', es_name: 'Categoría 1' },
+  { en_name: 'Category 2', es_name: 'Categoría 2' },
+  { en_name: 'Category 3', es_name: 'Categoría 3' },
+]
+const subCategories = [
+  { en_name: 'All subcategories', es_name: 'Todas las subcategorías' },
+  { en_name: 'Subcategory 1', es_name: 'Subcategoría 1' },
+  { en_name: 'Subcategory 2', es_name: 'Subcategoría 2' },
+  { en_name: 'Subcategory 3', es_name: 'Subcategoría 3' },
+]
+const brands = [
+  { en_name: 'All brands', es_name: 'Todas las marcas' },
+  { en_name: 'Brand 1', es_name: 'Marca 1' },
+  { en_name: 'Brand 2', es_name: 'Marca 2' },
+  { en_name: 'Brand 3', es_name: 'Marca 3' },
+]
+
+const locales = {
+  en: {
+    title: 'Search products',
+    button: 'Search',
+    tabs: {
+      vendor: 'Vendor',
+      product: 'Product',
+    },
+    labels: {
+      category: 'Category',
+      subCategory: 'Subcategory',
+      brand: 'Brand',
+    },
+  },
+  es: {
+    title: 'Buscar productos',
+    button: 'Buscar',
+    tabs: {
+      vendor: 'Vendedor',
+      product: 'Producto',
+    },
+    labels: {
+      category: 'Categoría',
+      subCategory: 'Subcategoría',
+      brand: 'Marca',
+    },
+  },
+}
 
 export default {
   title: 'organisms/ProductsFilters',
-  component: ProductsFilters,
+  argTypes: {
+    lang: {
+      options: ['en', 'es'],
+      control: { type: 'select' },
+    },
+  },
 } as ComponentMeta<typeof ProductsFilters>
 
-const Template: Story<ProductsFiltersProps<string, string, string>> = args => (
-  <ProductsFilters {...args} />
-)
+export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
+  const locale = locales[lang]
 
-export const Default = Template.bind({})
-Default.args = {
-  title: 'Search Products',
-  buttonText: 'Search',
-  tab: 'product',
-  tabsText: { vendor: 'Vendor', product: 'Product' },
-  categoriesSelectProps: {
-    label: 'Categories',
-    items: categories,
-    value: categories[0],
-  },
-  subCategoriesSelectProps: {
-    label: 'Subcategories',
-    items: subCategories,
-    value: subCategories[0],
-  },
-  brandsSelectProps: {
-    label: 'Brand',
-    items: brands,
-    value: brands[0],
-  },
+  return (
+    <ProductsFilters
+      title={locale.title}
+      buttonText={locale.button}
+      tabsText={locale.tabs}
+      tab='product'
+      categoriesSelectProps={{
+        label: locale.labels.category,
+        items: categories,
+        value: categories[0],
+        keyExtractor: c => c.en_name,
+        renderItem: c => c[`${lang}_name`],
+      }}
+      subCategoriesSelectProps={{
+        label: locale.labels.subCategory,
+        items: subCategories,
+        value: subCategories[0],
+        keyExtractor: sc => sc.en_name,
+        renderItem: sc => sc[`${lang}_name`],
+      }}
+      brandsSelectProps={{
+        label: locale.labels.brand,
+        items: brands,
+        value: brands[0],
+        keyExtractor: b => b.en_name,
+        renderItem: b => b[`${lang}_name`],
+      }}
+    />
+  )
 }
