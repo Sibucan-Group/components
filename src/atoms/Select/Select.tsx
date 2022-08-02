@@ -7,7 +7,7 @@ export type SelectOption = {
   toString: () => string
 }
 
-export type SelectProps<T> = {
+export type SelectProps<T = SelectOption> = {
   label?: string
   items: T[]
   value?: T
@@ -19,7 +19,7 @@ export type SelectProps<T> = {
   }>
   keyExtractor?(item: T): string | number
   renderItem?(item: T): ReactNode
-  onChange: (value: T) => void
+  onChange?: (value?: T) => void
 }
 
 export const Select = <T extends SelectOption>({
@@ -34,7 +34,7 @@ export const Select = <T extends SelectOption>({
 }: SelectProps<T>) => (
   <div className={cnb('bg-transparent', classNames?.root)}>
     {label && <label className='block mb-1 font-medium'>{label}</label>}
-    <Listbox value={value} onChange={onChange}>
+    <Listbox value={value} onChange={v => onChange?.(v)}>
       <div className='relative'>
         <Listbox.Button
           className={cnb(
