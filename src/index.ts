@@ -1,2 +1,2 @@
 export * from './atoms'
-export * from './organisms/ProductsSearchFilter'
+export * from './organisms/ProductsFilters'
