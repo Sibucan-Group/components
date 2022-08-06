@@ -16,15 +16,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/jsx-runtime",
     "plugin:storybook/recommended",
-    "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended"
-  ],
-  "rules": {
-    "tailwindcss/no-custom-classname": [
-      1, {
-        "callees": ["cnb"],
-        "cssFiles": ["node_modules/daisyui/dist/*.css"]
-      }
-    ]
-  }
+    "plugin:prettier/recommended"
+  ]
 }

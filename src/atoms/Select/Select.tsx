@@ -44,7 +44,7 @@ export const Select = <T extends SelectOption>({
 }: SelectProps<T>) => {
   return (
     <div className={cnb('bg-transparent', classNames?.root)}>
-      {label && <label className='block mb-1 font-medium'>{label}</label>}
+      {label && <label className='mb-1 block font-medium'>{label}</label>}
       <Listbox value={value} onChange={v => onChange?.(v)}>
         <div className='relative'>
           <Listbox.Button
@@ -58,13 +58,13 @@ export const Select = <T extends SelectOption>({
             {value ? (
               <div className='truncate'>{renderItem?.(value) || value}</div>
             ) : (
-              <span className='block text-gray-500 truncate'>
+              <span className='block truncate text-gray-500'>
                 {placeholder}
               </span>
             )}
-            <span className='flex absolute inset-y-0 right-0 items-center pr-3 pointer-events-none'>
+            <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
               <ChevronDownIcon
-                className='w-5 h-5 text-gray-400'
+                className='h-5 w-5 text-gray-400'
                 aria-hidden='true'
               />
             </span>
@@ -77,7 +77,7 @@ export const Select = <T extends SelectOption>({
           >
             <Listbox.Options
               className={cnb(
-                'absolute w-full z-50 mt-1 max-h-60 overflow-auto ring-primary',
+                'absolute z-50 mt-1 max-h-60 w-full overflow-auto ring-primary',
                 'rounded-xl bg-white p-2 shadow-lg ring-1 ring-opacity-5 focus:outline-none',
                 classNames?.panel
               )}
@@ -104,8 +104,8 @@ export const Select = <T extends SelectOption>({
                         {renderItem?.(i) || i}
                       </div>
                       {selected ? (
-                        <span className='flex absolute inset-y-0 left-0 items-center pl-3 text-primary'>
-                          <CheckIcon className='w-5 h-5' aria-hidden='true' />
+                        <span className='absolute inset-y-0 left-0 flex items-center pl-3 text-primary'>
+                          <CheckIcon className='h-5 w-5' aria-hidden='true' />
                         </span>
                       ) : null}
                     </>

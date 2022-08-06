@@ -11,35 +11,35 @@ type CurrencyInputProps = {
 const CurrencyInput = ({ placeholder, onChange }: CurrencyInputProps) => {
   return (
     <div className='relative'>
-      <div className='flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none'>
+      <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
         <span className='sm:text-sm'> $ </span>
       </div>
       <input
         type='text'
         placeholder={placeholder}
         onChange={e => onChange?.(e.target.value)}
-        className='py-2 px-1 pl-6 w-32 placeholder:text-gray-500 rounded-2xl border focus:outline-none
-          focus-visible:ring-1 shadow focus-visible:border-primary
+        className='w-32 rounded-2xl border py-2 px-1 pl-6 shadow placeholder:text-gray-500
+          focus:outline-none focus-visible:border-primary focus-visible:ring-1
           focus-visible:ring-primary focus-visible:ring-offset-primary'
       />
     </div>
   )
 }
 
-export type ProductsFilterTab = 'vendor' | 'product'
+export type ProductsFiltersTab = 'vendor' | 'product'
 
 export type ProductsFiltersProps<C, SC, B> = {
   title: string
   buttonText: string
-  tab: ProductsFilterTab
+  tab: ProductsFiltersTab
   tabsText: { vendor: string; product: string }
   categoriesSelectProps: SelectProps<C>
   subCategoriesSelectProps: SelectProps<SC>
   brandsSelectProps: SelectProps<B>
-  onTabChange?: Dispatch<SetStateAction<ProductsFilterTab>>
-  onSearch?: () => void
-  onMinChange?: Dispatch<SetStateAction<string>>
-  onMaxChange?: Dispatch<SetStateAction<string>>
+  onTabChange: Dispatch<SetStateAction<ProductsFiltersTab>>
+  onSearch: () => void
+  onMinChange: Dispatch<SetStateAction<string>>
+  onMaxChange: Dispatch<SetStateAction<string>>
 }
 
 export const ProductsFilters = <
@@ -60,11 +60,9 @@ export const ProductsFilters = <
   onMaxChange,
 }: ProductsFiltersProps<C, SC, B>) => {
   return (
-    <div className='p-8 w-96 rounded-2xl shadow-lg bg-base-100'>
-      <div className='mb-2 text-xl font-semibold text-center text-neutral'>
-        {title}
-      </div>
-      <div className='flex items-center px-2 text-white rounded-full transition'>
+    <div className='w-96 rounded-2xl bg-base-100 p-8 shadow-lg'>
+      <div className='mb-2 text-center text-xl font-semibold'>{title}</div>
+      <div className='flex items-center rounded-full px-2 text-white transition'>
         <button
           className={cnb(
             'grow rounded-l-full p-1 transition duration-300',
@@ -89,7 +87,7 @@ export const ProductsFilters = <
         <Select {...subCategoriesSelectProps} />
         <Select {...brandsSelectProps} />
       </div>
-      <div className='flex justify-between items-center my-10 w-full'>
+      <div className='my-10 flex w-full items-center justify-between'>
         <CurrencyInput placeholder='Min' onChange={onMinChange} />
         <CurrencyInput placeholder='Max' onChange={onMaxChange} />
       </div>
@@ -97,7 +95,7 @@ export const ProductsFilters = <
         <Button
           type='submit'
           variant='contained'
-          className='!text-lg font-bold btn-wide'
+          className='btn-wide !text-lg font-bold'
           onClick={onSearch}
         >
           {buttonText}
