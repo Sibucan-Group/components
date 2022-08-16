@@ -38,10 +38,8 @@ export const ProductCard = ({
           </button>
           <button
             className={cnb(
-              'btn btn-circle shadow-md',
-              isFavorite
-                ? 'btn-error'
-                : 'border-neutral bg-neutral hover:border-error hover:bg-error'
+              'btn btn-circle shadow-md border-transparent hover:border-transparent hover:bg-red-500',
+              isFavorite ? 'bg-red-500 hover:bg-red-700' : 'bg-gray-300'
             )}
             onClick={onFavorite}
           >
