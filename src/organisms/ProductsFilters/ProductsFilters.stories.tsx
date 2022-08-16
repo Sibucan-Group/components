@@ -99,6 +99,18 @@ export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
         keyExtractor: b => b.en_name,
         renderItem: b => b[`${lang}_name`],
       }}
+      onTabChange={() => {
+        return
+      }}
+      onSearch={() => {
+        return
+      }}
+      onMinChange={() => {
+        return
+      }}
+      onMaxChange={() => {
+        return
+      }}
     />
   )
 }
