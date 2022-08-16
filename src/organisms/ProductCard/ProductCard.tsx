@@ -20,7 +20,7 @@ export const ProductCard = ({
   onFavorite,
 }: ProductCardProps) => {
   return (
-    <div className='card-compact card w-56 bg-white shadow-xl'>
+    <div className='card card-compact w-56 bg-white shadow-xl'>
       <figure>{image}</figure>
       <div className='card-body'>
         <h2 className='min-h-16 text-lg font-medium line-clamp-3'>

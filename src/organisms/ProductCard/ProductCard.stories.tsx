@@ -1,5 +1,7 @@
 import { ComponentMeta, Story } from '@storybook/react'
+
 import { ProductCard, ProductCardProps } from './ProductCard'
+import makeupBagImg from './images/makeup-bag.jpg'
 
 export default {
   title: 'organisms/ProductCard',
@@ -31,7 +33,7 @@ Default.args = {
   productPrice: 80.0,
   image: (
     <img
-      src='/makeup-bag.jpg'
+      src={makeupBagImg}
       alt='Product Example'
       width='250'
       height='176'
