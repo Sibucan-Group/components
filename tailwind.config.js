@@ -9,7 +9,7 @@ module.exports = {
   plugins: [
     require('daisyui'),
     require('@tailwindcss/line-clamp'),
-    [require('prettier-plugin-tailwindcss')],
+    require('prettier-plugin-tailwindcss'),
   ],
   daisyui: {
     themes: [
@@ -21,7 +21,7 @@ module.exports = {
           'secondary-content': '#FFFFFF',
           'accent': '#34D399',
           'accent-content': '#FFFFFF',
-          'neutral': '#d1d5db',
+          'neutral': '#D1D5DB',
           'neutral-content': '#FFFFFF',
           'base-100': '#F7F7F7',
           'info': '#71A3F4',
