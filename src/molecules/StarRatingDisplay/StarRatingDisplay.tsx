@@ -17,7 +17,6 @@ export type StarRatingProps = {
 }
 
 export const StarRating = ({ rating, size }: StarRatingProps) => {
-  console.log('size', starSize[size])
   return (
     <div className='flex'>
       {stars.map(i =>
