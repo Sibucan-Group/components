@@ -12,6 +12,7 @@ export type CommonSelectProps<T> = {
   items: T[]
   value?: T
   placeholder?: string
+  disabled?: boolean
   classNames?: Partial<{
     root: string
     button: string
@@ -37,6 +38,7 @@ export const Select = <T extends SelectOption>({
   items,
   value,
   placeholder,
+  disabled,
   onChange,
   keyExtractor,
   renderItem,
@@ -45,13 +47,14 @@ export const Select = <T extends SelectOption>({
   return (
     <div className={cnb('bg-transparent', classNames?.root)}>
       {label && <label className='mb-1 block font-medium'>{label}</label>}
-      <Listbox value={value} onChange={v => onChange?.(v)}>
+      <Listbox value={value} onChange={v => onChange?.(v)} disabled={disabled}>
         <div className='relative'>
           <Listbox.Button
             className={cnb(
               'relative w-full rounded-2xl border bg-white py-2.5 pl-4 pr-10 text-left',
               'focus:outline-none focus-visible:ring-1 focus-visible:ring-primary',
               'focus-visible:border-primary focus-visible:ring-offset-primary',
+              disabled && 'cursor-not-allowed text-gray-400',
               classNames?.button
             )}
           >

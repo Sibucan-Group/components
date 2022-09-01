@@ -20,6 +20,16 @@ Default.args = {
   value: categories[0],
 }
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+  classNames: {
+    root: 'w-80',
+  },
+  items: categories,
+  value: categories[0],
+  disabled: true,
+}
+
 export const WithLabel = Template.bind({})
 WithLabel.args = {
   classNames: {
