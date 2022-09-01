@@ -18,7 +18,7 @@ const CurrencyInput = ({ placeholder, onChange }: CurrencyInputProps) => {
         type='text'
         placeholder={placeholder}
         onChange={e => onChange?.(e.target.value)}
-        className='w-32 rounded-2xl border py-2 px-1 pl-6 shadow placeholder:text-gray-500
+        className='w-32 rounded-2xl border border-gray-200 py-2 px-1 pl-6 shadow placeholder:text-gray-500
           focus:outline-none focus-visible:border-primary focus-visible:ring-1
           focus-visible:ring-primary focus-visible:ring-offset-primary'
       />
