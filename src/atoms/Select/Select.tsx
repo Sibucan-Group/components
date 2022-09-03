@@ -13,6 +13,7 @@ export type CommonSelectProps<T> = {
   value?: T
   placeholder?: string
   disabled?: boolean
+  error?: string
   classNames?: Partial<{
     root: string
     button: string
@@ -39,6 +40,7 @@ export const Select = <T extends SelectOption>({
   value,
   placeholder,
   disabled,
+  error,
   onChange,
   keyExtractor,
   renderItem,
@@ -46,12 +48,14 @@ export const Select = <T extends SelectOption>({
 }: SelectProps<T>) => {
   return (
     <div className={cnb('bg-transparent', classNames?.root)}>
-      {label && <label className='mb-1 block font-medium'>{label}</label>}
+      {label && (
+        <label className='mb-1 block text-xl font-semibold'>{label}</label>
+      )}
       <Listbox value={value} onChange={v => onChange?.(v)} disabled={disabled}>
         <div className='relative'>
           <Listbox.Button
             className={cnb(
-              'relative w-full rounded-2xl border bg-white py-2.5 pl-4 pr-10 text-left',
+              'font-regular border-gray-73 relative w-full rounded-2xl border bg-white py-2 pl-3 pr-10 text-left text-lg',
               'focus:outline-none focus-visible:ring-1 focus-visible:ring-primary',
               'focus-visible:border-primary focus-visible:ring-offset-primary',
               disabled && 'cursor-not-allowed text-gray-400',
@@ -59,9 +63,11 @@ export const Select = <T extends SelectOption>({
             )}
           >
             {value ? (
-              <div className='truncate'>{renderItem?.(value) || value}</div>
+              <div className='text-gray-20 truncate'>
+                {renderItem?.(value) || value}
+              </div>
             ) : (
-              <span className='block truncate text-gray-500'>
+              <span className='block truncate text-gray-400'>
                 {placeholder}
               </span>
             )}
@@ -119,6 +125,7 @@ export const Select = <T extends SelectOption>({
           </Transition>
         </div>
       </Listbox>
+      {error && <p className='text-red-10 mt-1 text-base'>{error}</p>}
     </div>
   )
 }
