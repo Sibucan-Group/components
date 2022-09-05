@@ -1,7 +1,10 @@
 import { ComponentMeta, Story } from '@storybook/react'
 
 import { ProductsFilters } from './ProductsFilters'
-import { ProductFilterSkeleton } from './ProductsFiltersSkeleton'
+import {
+  ProductFilterSkeletonProps,
+  ProductFiltersSkeleton,
+} from './ProductsFiltersSkeleton'
 
 const categories = [
   { en_name: 'All categories', es_name: 'Todas las categorías' },
@@ -116,6 +119,11 @@ export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
   )
 }
 
-const Template: Story = args => <ProductFilterSkeleton {...args} />
-export const Skeleton = Template.bind({})
-Skeleton.args = {}
+const Template: Story<ProductFilterSkeletonProps> = args => (
+  <ProductFiltersSkeleton {...args} />
+)
+
+export const SkeletonWithTreeSelects = Template.bind({})
+SkeletonWithTreeSelects.args = {
+  selectsNumber: 3,
+}
