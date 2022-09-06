@@ -1,10 +1,10 @@
-export type ProductFilterSkeletonProps = {
+export type ProductsFilterSkeletonProps = {
   selectsNumber: number
 }
 
-export const ProductFiltersSkeleton = ({
+export const ProductsFiltersSkeleton = ({
   selectsNumber = 3,
-}: ProductFilterSkeletonProps) => {
+}: ProductsFilterSkeletonProps) => {
   return (
     <div className='w-96 rounded-2xl bg-stone-50 p-8 shadow-lg'>
       <div className='animate-pulse'>
