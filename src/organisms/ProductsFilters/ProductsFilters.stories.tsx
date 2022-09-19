@@ -18,12 +18,6 @@ const subCategories = [
   { en_name: 'Subcategory 2', es_name: 'Subcategoría 2' },
   { en_name: 'Subcategory 3', es_name: 'Subcategoría 3' },
 ]
-const brands = [
-  { en_name: 'All brands', es_name: 'Todas las marcas' },
-  { en_name: 'Brand 1', es_name: 'Marca 1' },
-  { en_name: 'Brand 2', es_name: 'Marca 2' },
-  { en_name: 'Brand 3', es_name: 'Marca 3' },
-]
 
 const locales = {
   en: {
@@ -71,15 +65,10 @@ export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
     <ProductsFilters
       title={locale.title}
       buttonText={locale.button}
-      tabsText={locale.tabs}
-      tab='product'
       categoriesSelectProps={{
         label: locale.labels.category,
         items: categories,
         value: categories[0],
-        classNames: {
-          button: 'shadow',
-        },
         keyExtractor: c => c.en_name,
         renderItem: c => c[`${lang}_name`],
       }}
@@ -87,24 +76,8 @@ export const Default = ({ lang = 'en' }: { lang: 'es' | 'en' }) => {
         label: locale.labels.subCategory,
         items: subCategories,
         value: subCategories[0],
-        classNames: {
-          button: 'shadow',
-        },
         keyExtractor: sc => sc.en_name,
         renderItem: sc => sc[`${lang}_name`],
-      }}
-      brandsSelectProps={{
-        label: locale.labels.brand,
-        items: brands,
-        value: brands[0],
-        classNames: {
-          button: 'shadow',
-        },
-        keyExtractor: b => b.en_name,
-        renderItem: b => b[`${lang}_name`],
-      }}
-      onTabChange={() => {
-        return
       }}
       onSearch={() => {
         return
@@ -123,7 +96,20 @@ const Template: Story<ProductsFilterSkeletonProps> = args => (
   <ProductsFiltersSkeleton {...args} />
 )
 
-export const SkeletonWithTreeSelects = Template.bind({})
-SkeletonWithTreeSelects.args = {
+// Skeleton stories
+export const SkeletonWithThreeSelectsAndTabs = Template.bind({})
+SkeletonWithThreeSelectsAndTabs.args = {
   selectsNumber: 3,
+}
+
+export const SkeletonWithThreeSelects = Template.bind({})
+SkeletonWithThreeSelects.args = {
+  selectsNumber: 3,
+  withTabs: false,
+}
+
+export const SkeletonWithTwoSelects = Template.bind({})
+SkeletonWithTwoSelects.args = {
+  selectsNumber: 2,
+  withTabs: false,
 }

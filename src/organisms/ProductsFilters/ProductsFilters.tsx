@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from 'react'
-import { cnb } from 'cnbuilder'
 
 import { Button, Select, SelectProps, SelectOption } from '../../atoms'
 
@@ -18,7 +17,7 @@ const CurrencyInput = ({ placeholder, onChange }: CurrencyInputProps) => {
         type='text'
         placeholder={placeholder}
         onChange={e => onChange?.(e.target.value)}
-        className='w-32 rounded-2xl border border-gray-200 py-2 px-1 pl-6 shadow placeholder:text-gray-500
+        className='w-32 rounded-2xl border border-gray-400 py-2 px-1 pl-6 placeholder:text-gray-500
           focus:outline-none focus-visible:border-primary focus-visible:ring-1
           focus-visible:ring-primary focus-visible:ring-offset-primary'
       />
@@ -28,15 +27,16 @@ const CurrencyInput = ({ placeholder, onChange }: CurrencyInputProps) => {
 
 export type ProductsFiltersTab = 'vendor' | 'product'
 
-export type ProductsFiltersProps<C, SC, B> = {
+export type ProductsFiltersProps<C, SC /*,B*/> = {
   title: string
   buttonText: string
-  tab: ProductsFiltersTab
-  tabsText: { vendor: string; product: string }
+  // TODO: uncomment when backend implements feat
+  // tab: ProductsFiltersTab
+  // tabsText: { vendor: string; product: string }
+  // onTabChange: Dispatch<SetStateAction<ProductsFiltersTab>>
+  // brandsSelectProps: SelectProps<B>
   categoriesSelectProps: SelectProps<C>
   subCategoriesSelectProps: SelectProps<SC>
-  brandsSelectProps: SelectProps<B>
-  onTabChange: Dispatch<SetStateAction<ProductsFiltersTab>>
   onSearch: () => void
   onMinChange: Dispatch<SetStateAction<string>>
   onMaxChange: Dispatch<SetStateAction<string>>
@@ -44,25 +44,27 @@ export type ProductsFiltersProps<C, SC, B> = {
 
 export const ProductsFilters = <
   C extends SelectOption,
-  SC extends SelectOption,
-  B extends SelectOption
+  SC extends SelectOption
+  // B extends SelectOption
 >({
   title,
   buttonText,
-  tab = 'product',
-  tabsText,
   categoriesSelectProps,
   subCategoriesSelectProps,
-  brandsSelectProps,
-  onTabChange,
+  // TODO: uncomment when backend implements feat
+  // brandsSelectProps,
+  // tab = 'product',
+  // tabsText,
+  // onTabChange,
   onSearch,
   onMinChange,
   onMaxChange,
-}: ProductsFiltersProps<C, SC, B>) => {
+}: ProductsFiltersProps<C, SC /*, B*/>) => {
   return (
-    <div className='w-96 rounded-2xl bg-base-100 p-8 shadow-lg'>
+    <div className='w-96 rounded-2xl bg-base-100 p-6 shadow-lg'>
       <div className='mb-2 text-center text-xl font-semibold'>{title}</div>
-      <div className='flex items-center rounded-full px-2 text-white transition'>
+      {/* // TODO: uncomment when backend implements feat */}
+      {/* <div className='flex items-center rounded-full px-2 text-white transition'>
         <button
           className={cnb(
             'grow rounded-l-full p-1 transition duration-300',
@@ -81,11 +83,12 @@ export const ProductsFilters = <
         >
           {tabsText.product}
         </button>
-      </div>
+      </div> */}
       <div className='my-10 space-y-4'>
         <Select {...categoriesSelectProps} />
         <Select {...subCategoriesSelectProps} />
-        <Select {...brandsSelectProps} />
+        {/* // TODO: uncomment when backend implements feat */}
+        {/* <Select {...brandsSelectProps} /> */}
       </div>
       <div className='my-10 flex w-full items-center justify-between'>
         <CurrencyInput placeholder='Min' onChange={onMinChange} />

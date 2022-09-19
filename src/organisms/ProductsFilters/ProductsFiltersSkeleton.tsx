@@ -1,15 +1,17 @@
 export type ProductsFilterSkeletonProps = {
-  selectsNumber: number
+  withTabs: boolean
+  selectsNumber?: number
 }
 
 export const ProductsFiltersSkeleton = ({
   selectsNumber = 3,
+  withTabs = true,
 }: ProductsFilterSkeletonProps) => {
   return (
     <div className='w-96 rounded-2xl bg-stone-50 p-8 shadow-lg'>
       <div className='animate-pulse'>
         <div className='mx-auto my-2 h-5 w-2/3 rounded-full bg-gray-300' />
-        <div className='h-6 rounded-full bg-gray-300' />
+        {withTabs && <div className='h-6 rounded-full bg-gray-300' />}
         {/* Selects */}
         <div className='my-10 space-y-4'>
           {Array.from({ length: selectsNumber }).map((_element, index) => (
