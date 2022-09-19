@@ -55,7 +55,7 @@ export const Select = <T extends SelectOption>({
         <div className='relative'>
           <Listbox.Button
             className={cnb(
-              'font-regular border-gray-73 relative w-full rounded-2xl border bg-white py-2 pl-3 pr-10 text-left text-lg',
+              'font-regular relative w-full rounded-2xl border border-gray-400 bg-white py-2 pl-3 pr-10 text-left text-lg',
               'focus:outline-none focus-visible:ring-1 focus-visible:ring-primary',
               'focus-visible:border-primary focus-visible:ring-offset-primary',
               disabled && 'cursor-not-allowed text-gray-400',
