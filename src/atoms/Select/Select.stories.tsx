@@ -5,7 +5,7 @@ import { Select, SelectProps } from './Select'
 const categories = ['Example 1', 'Example 2']
 
 export default {
-  title: 'Select',
+  title: 'atoms/Select',
   component: Select,
 } as ComponentMeta<typeof Select>
 
