@@ -31,10 +31,10 @@ export const Counter = ({ size, count, setCount }: CounterProps) => {
   const onPlus = () => setCount(prev => prev + 1)
 
   return (
-    <div className='flex items-center gap-5'>
+    <div className='btn-group flex items-center gap-5'>
       <button
         className={cnb(
-          'btn btn-outline btn-circle border-2',
+          'btn- btn btn-outline btn-circle border-2',
           counterSize[size]
         )}
         onClick={onMinus}
