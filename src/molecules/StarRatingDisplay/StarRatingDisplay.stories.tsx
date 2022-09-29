@@ -8,38 +8,38 @@ export default {
 
 const Template: Story<StarRatingProps> = args => <StarRating {...args} />
 
-export const FullStarsNormal = Template.bind({})
-FullStarsNormal.args = {
+export const FullStarsSmall = Template.bind({})
+FullStarsSmall.args = {
   rating: 5,
-  size: 'normal',
+  size: 'sm',
 }
 
 export const FullStarsMedium = Template.bind({})
 FullStarsMedium.args = {
   rating: 5,
-  size: 'medium',
+  size: 'md',
 }
 
-export const FullStarsBig = Template.bind({})
-FullStarsBig.args = {
+export const FullStarsLarge = Template.bind({})
+FullStarsLarge.args = {
   rating: 5,
-  size: 'big',
+  size: 'lg',
 }
 
-export const ZeroStarsNormal = Template.bind({})
-ZeroStarsNormal.args = {
+export const ZeroStarsSmall = Template.bind({})
+ZeroStarsSmall.args = {
   rating: 0,
-  size: 'normal',
+  size: 'sm',
 }
 
 export const ZeroStarsMedium = Template.bind({})
 ZeroStarsMedium.args = {
   rating: 0,
-  size: 'medium',
+  size: 'md',
 }
 
-export const ZeroStarsBig = Template.bind({})
-ZeroStarsBig.args = {
+export const ZeroStarsLarge = Template.bind({})
+ZeroStarsLarge.args = {
   rating: 0,
-  size: 'big',
+  size: 'lg',
 }

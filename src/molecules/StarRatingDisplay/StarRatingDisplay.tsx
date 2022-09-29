@@ -1,19 +1,20 @@
-import { StarIcon as StarFilledIcon } from '@heroicons/react/solid'
-import { StarIcon as StarEmptyIcon } from '@heroicons/react/outline'
+import { StarIcon } from '@heroicons/react/outline'
 
 import { cnb } from 'cnbuilder'
 
 const stars = [1, 2, 3, 4, 5]
 
 const starSize = {
-  normal: 'w-4',
-  medium: 'w-6',
-  big: 'w-8',
+  sm: 'w-4',
+  md: 'w-6',
+  lg: 'w-8',
 }
+
+type StartSize = typeof starSize
 
 export type StarRatingProps = {
   rating: number
-  size: 'normal' | 'medium' | 'big'
+  size: keyof StartSize
 }
 
 export const StarRating = ({ rating, size }: StarRatingProps) => {
@@ -21,12 +22,12 @@ export const StarRating = ({ rating, size }: StarRatingProps) => {
     <div className='flex'>
       {stars.map(i =>
         i <= rating ? (
-          <StarFilledIcon
+          <StarIcon
             key={i}
-            className={cnb(starSize[size], 'text-yellow-400')}
+            className={cnb(starSize[size], 'fill-current text-yellow-400')}
           />
         ) : (
-          <StarEmptyIcon
+          <StarIcon
             key={i}
             className={cnb(starSize[size], 'text-yellow-400')}
           />
