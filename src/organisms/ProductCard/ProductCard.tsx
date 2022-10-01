@@ -1,50 +1,43 @@
 import { ReactNode } from 'react'
-import { HeartIcon, ShoppingCartIcon } from '@heroicons/react/outline'
-import { cnb } from 'cnbuilder'
+import { ShoppingCartIcon } from '@heroicons/react/outline'
+import { Button } from '../../atoms'
 
 export type ProductCardProps = {
-  productName: string
-  productPrice: number
-  isFavorite: boolean
+  name: string
+  price: number
+  addToCartText: string
   image: ReactNode
   onAddToCart: () => void
-  onFavorite: () => void
 }
 
 export const ProductCard = ({
-  productName,
-  productPrice,
-  isFavorite,
+  name,
+  price,
+  addToCartText,
   image,
-  onAddToCart: onAddToCard,
-  onFavorite,
+  onAddToCart,
 }: ProductCardProps) => {
   return (
-    <div className='card card-compact w-56 bg-white shadow-xl'>
+    <div className='card-compact card w-60 bg-white shadow-xl'>
       <figure>{image}</figure>
       <div className='card-body'>
-        <h2 className='min-h-16 text-lg font-medium line-clamp-3'>
-          {productName}
-        </h2>
-        <p className='card-title truncate italic text-gray-900'>
-          ${productPrice}
-        </p>
-        <div className='card-actions justify-between'>
+        <h2 className='min-h-16 text-lg font-medium line-clamp-3'>{name}</h2>
+        <p className='card-title truncate italic text-gray-900'>${price}</p>
+        <div className='group card-actions justify-end'>
           <button
-            className='btn btn-primary btn-circle shadow-md'
-            onClick={onAddToCard}
+            className='btn btn-primary btn-circle shadow-md transition-all group-hover:hidden'
+            onClick={onAddToCart}
           >
-            <ShoppingCartIcon className='w-7 text-white' />
+            <ShoppingCartIcon className='w-6 text-white' />
           </button>
-          <button
-            className={cnb(
-              'btn btn-circle shadow-md border-transparent hover:border-transparent hover:bg-red-500',
-              isFavorite ? 'bg-red-500 hover:bg-red-700' : 'bg-gray-300'
-            )}
-            onClick={onFavorite}
+          <Button
+            variant='contained'
+            className='hidden transition-all group-hover:inline-flex'
+            onClick={onAddToCart}
           >
-            <HeartIcon className='w-7 text-white' />
-          </button>
+            <ShoppingCartIcon className='mr-2 w-6 text-white' />
+            <span>{addToCartText}</span>
+          </Button>
         </div>
       </div>
     </div>

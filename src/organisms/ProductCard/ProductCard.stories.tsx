@@ -29,8 +29,9 @@ const TemplateGrid: Story<ProductCardProps> = args => (
 
 export const Default = Template.bind({})
 Default.args = {
-  productName: 'Product name this is the product name',
-  productPrice: 80.0,
+  name: 'Product name this is the product name',
+  price: 80.0,
+  addToCartText: 'Add to cart',
   image: (
     <img
       src={makeupBagImg}
@@ -40,12 +41,6 @@ Default.args = {
       style={{ objectFit: 'none' }}
     />
   ),
-}
-
-export const Favorite = Template.bind({})
-Favorite.args = {
-  ...Default.args,
-  isFavorite: true,
 }
 
 export const Grid = TemplateGrid.bind({})
