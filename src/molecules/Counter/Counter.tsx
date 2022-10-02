@@ -24,7 +24,7 @@ export type CounterProps = {
 
 export const Counter = ({ size, count, setCount }: CounterProps) => {
   const onMinus = () => {
-    if (count === 0) return
+    if (count === 1) return
     setCount(prev => prev - 1)
   }
 
