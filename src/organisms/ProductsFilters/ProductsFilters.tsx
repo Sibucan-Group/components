@@ -61,7 +61,7 @@ export const ProductsFilters = <
   onMaxChange,
 }: ProductsFiltersProps<C, SC /*, B*/>) => {
   return (
-    <div className='w-96 rounded-2xl bg-base-100 p-6 shadow-lg'>
+    <div className='w-full md:w-80 lg:w-96 rounded-2xl bg-base-100 p-4 md:p-6 shadow-lg'>
       <div className='mb-2 text-center text-xl font-semibold'>{title}</div>
       {/* // TODO: uncomment when backend implements feat */}
       {/* <div className='flex items-center rounded-full px-2 text-white transition'>
