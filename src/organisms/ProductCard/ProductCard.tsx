@@ -18,7 +18,7 @@ export const ProductCard = ({
   onAddToCart,
 }: ProductCardProps) => {
   return (
-    <div className='card-compact card w-36 xs:w-44 xs:h-72 h-60 md:w-52 md:h-auto  lg:w-60 lg:h-auto bg-white shadow-xl'>
+    <div className='card-compact card w-36 xs:w-44 xs:h-72 h-60 md:w-52 md:h-80  lg:w-60 lg:h-96 bg-white shadow-xl'>
       <figure>{image}</figure>
       <div className='card-body'>
         <h2 className='lg:min-h-16 text-sm lg:text-lg font-medium line-clamp-1 lg:line-clamp-3'>{name}</h2>
