@@ -19,16 +19,20 @@ type CounterSize = typeof counterSize
 export type CounterProps = {
   size: keyof CounterSize
   count: number
+  stock: number
   setCount: Dispatch<SetStateAction<number>>
 }
 
-export const Counter = ({ size, count, setCount }: CounterProps) => {
+export const Counter = ({ size, count, setCount, stock }: CounterProps) => {
   const onMinus = () => {
     if (count === 1) return
     setCount(prev => prev - 1)
   }
 
-  const onPlus = () => setCount(prev => prev + 1)
+  const onPlus = () => {
+    if(count<stock)
+    setCount(prev => prev + 1)
+  }
 
   return (
     <div className='btn-group flex items-center gap-5'>
