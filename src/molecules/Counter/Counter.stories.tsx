@@ -12,7 +12,9 @@ const Template: Story<CounterProps> = args => <Counter {...args} />
 const TemplateIncrement: Story<CounterProps> = () => {
   const [count, setCount] = useState(1)
 
-  return <Counter size={'sm'} count={count} setCount={setCount} />
+  const stock=0
+
+  return <Counter size={'sm'} count={count} setCount={setCount} stock={stock}/>
 }
 
 const lambda = () => null
