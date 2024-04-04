@@ -37,12 +37,12 @@ export const Button = ({
       classes[variant],
       classes[color],
       classes[size],
-      loading && 'loading',
       className
     )}
     disabled={disabled}
     {...props}
   >
+    {loading && <span className="loading loading-spinner"></span>}
     {children}
   </button>
 )
