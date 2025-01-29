@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from 'react'
+import {  ReactNode } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
 import { cnb } from 'cnbuilder'
@@ -79,7 +79,7 @@ export const Select = <T extends SelectOption>({
             </span>
           </Listbox.Button>
           <Transition
-            as={Fragment}
+            //as={Fragment}
             leave='transition ease-in duration-100'
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
