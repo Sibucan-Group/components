@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+/* No Google Fonts @import here on purpose. CSS @import is render-blocking —
+   it has to resolve before anything else in this stylesheet can apply — and
+   that cost lands on every consuming app whether or not it's already
+   providing Nunito itself. Font-loading strategy (self-hosted vs CDN, which
+   weights, preload priority) is an application-level decision, not something
+   a shared component stylesheet should impose. Consumers are expected to
+   load Nunito themselves (e.g. sibucan-web self-hosts it via next/font). */
 
 @tailwind base;
 @tailwind components;
